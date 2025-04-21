@@ -61,7 +61,7 @@ This repository contains the materials for the **Build Practical AI Solutions wi
 >[!NOTE]
 At the end of the lab, the trainer will provide a demo of how is FoundationaLLM using the relevant Azure AI Foundry capabilities behind the scenes. This will help you improve your understanding of the lab and how to leverage the Azure AI Foundry capabilities in a solution.
 
-### Exercise 1 - A tour of the Azure AI Foundry Portal
+### Exercise 1: A tour of the Azure AI Foundry Portal
 
 In this exercise, you will tour the Azure AI Foundry Portal. You will be using your workshop account to access the portal.
 
@@ -78,7 +78,7 @@ In this exercise, you will tour the Azure AI Foundry Portal. You will be using y
 
     ![Azure AI Foundry Portal - Project](media/01-01-foundry-portal-project.png)
 
-### Exercise 2 - Using the Azure AI Model Inference API
+### Exercise 2: Using the Azure AI Model Inference API
 
 In this exercise, you will deply a model and interact with it using the Azure AI Model Inference API. You will be using your workshop account to access the portal.
 
@@ -96,7 +96,7 @@ In this exercise, you will deply a model and interact with it using the Azure AI
 
     ![Azure AI Foundry Portal - Deployed base model - Phi-4](media/01-02-foundry-portal-deployed-model-phi4.png)
 
-### Exercise 3 - A tour of the FoundationaLLM Management Portal and User Portal
+### Exercise 3: A tour of the FoundationaLLM Management Portal and User Portal
 
 In this exercise, you will tour the FoundationaLLM Management Portal and User Portal. You will be using your workshop account to access the portals.
 
@@ -124,7 +124,7 @@ In this exercise, you will tour the FoundationaLLM Management Portal and User Po
 >[!NOTE]
 >For the reminder of this workshop, the **FoundationaLLM Management Portal** will be referred to as **Management Portal** and the **FoundationaLLM User Portal** will be referred to as **User Portal**. Also, `NN` will identify the lab number assigned to you at the beginning of the workshop.
 
-### Exercise 4 - Interact with a FoundationaLLM agent using the Inference API
+### Exercise 4: Interact with a FoundationaLLM agent using the Inference API
    
 1. Login to the [FoundationaLLM User Portal](https://cachatuil43jljq2i5ox6.lemondesert-a0804c39.eastus2.azurecontainerapps.io/) using your workshop account.
 
@@ -150,7 +150,7 @@ Next, your instructor will provide a demo of how is this process working behind 
 >[!NOTE]
 At the end of the lab, the trainer will provide a demo of how is FoundationaLLM using the relevant Azure AI Foundry capabilities behind the scenes. This will help you improve your understanding of the lab and how to leverage the Azure AI Foundry capabilities in a solution.
 
-### Exercise 1 - Create a new agent in the Azure AI Foundry portal
+### Exercise 1: Create a new agent in the Azure AI Foundry portal
 
 1. Login to the [Azure AI Foundry Portal](https://ai.azure.com/) using your workshop account. Select the **Agents** section from the left navigation pane and then select the **+ New agent** option.
 
@@ -168,7 +168,7 @@ At the end of the lab, the trainer will provide a demo of how is FoundationaLLM 
 
 5. Return to the agent settings page and try using different instructions to see how the agent responds.
 
-### Exercise 2 - Add a code interpreter action to the agent
+### Exercise 2: Add a code interpreter action to the agent
 
 1. Under the **Actions** section, select the **+ Add** option and then select the **Code interpreter** action from the list of actions. Select **Save** to save the action.
 
@@ -180,7 +180,7 @@ At the end of the lab, the trainer will provide a demo of how is FoundationaLLM 
 
 3. Note how the agent responds with the code and the download link. Download the code file and open it to validate the code.
 
-### Exercise 3 - Add a knowledge action to the agent
+### Exercise 3: Add a knowledge action to the agent
 
 1. Under the **Knowledege** section, select the **+ Add** option and then select the **Files** action from the list of actions. Do not change the default options related to the vector store. Select the **Select local files** to upload files. Upload the [The Adventure of Whiskers](media/The_Adventure_of_Whiskers.pdf) file and select **Upload and save** to save the action.
 
@@ -192,7 +192,7 @@ At the end of the lab, the trainer will provide a demo of how is FoundationaLLM 
 
 3. Note how the agent responds with the content.
 
-### Exercise 3 - Interact with a FoundationaLLM agent that uses the `AzureAIAgentService` workflow.
+### Exercise 4: Interact with a FoundationaLLM agent that uses the `AzureAIAgentService` workflow.
 
 1. Login to the [FoundationaLLM User Portal](https://cachatuil43jljq2i5ox6.lemondesert-a0804c39.eastus2.azurecontainerapps.io/) using your workshop account. Select the `AIFoundry-NN` agent from the dropdown list and ask the following question:
 
@@ -232,7 +232,7 @@ Next, your instructor will provide a demo of how is this process working behind 
 >[!NOTE]
 At the end of the lab, the trainer will provide a demo of how is FoundationaLLM using the relevant Azure AI Foundry capabilities behind the scenes. This will help you improve your understanding of the lab and how to leverage the Azure AI Foundry capabilities in a solution.
 
-### Exercise 1 - Using a SQL tool that connects to a Microsoft Fabric Warehouse
+### Exercise 1: Using a SQL tool that connects to a Microsoft Fabric Warehouse
 
 1. Login to the [FoundationaLLM User Portal](https://cachatuil43jljq2i5ox6.lemondesert-a0804c39.eastus2.azurecontainerapps.io/) using your workshop account. Select the `AIFoundry-NN` agent from the dropdown list and ask the following question:
 
@@ -269,7 +269,7 @@ At the end of the lab, the trainer will provide a demo of how is FoundationaLLM 
 
    Notice how both the `SQL` and `Knowledge` tools are invoked to answer the question.
 
-### Exercise 2 - Using a KQL tool that connects to a Microsoft Fabric Evenhouse
+### Exercise 2: Using a KQL tool that connects to a Microsoft Fabric Evenhouse
 
 1. Login to the [FoundationaLLM User Portal](https://cachatuil43jljq2i5ox6.lemondesert-a0804c39.eastus2.azurecontainerapps.io/) using your workshop account. Select the `AIFoundry-NN` agent from the dropdown list and ask the following question:
 
@@ -279,7 +279,7 @@ At the end of the lab, the trainer will provide a demo of how is FoundationaLLM 
 
 2. Select the `KQL` content artifact and observe the details of the invocation of the KQL tool.
 
-### Exercise 3 - Using a File Analysis tool that connects to a Parquet file in OneLake
+### Exercise 3: Using a File Analysis tool that connects to a Parquet file in OneLake
 
 1. Login to the [FoundationaLLM User Portal](https://cachatuil43jljq2i5ox6.lemondesert-a0804c39.eastus2.azurecontainerapps.io/) using your workshop account. Select the `AIFoundry-NN` agent from the dropdown list and ask the following question:
 
