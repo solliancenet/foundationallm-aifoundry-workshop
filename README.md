@@ -156,7 +156,7 @@ In this exercise, you will evaluate the performance of the model using the built
 
     ![Azure AI Foundry Portal - Evaluate model - Generate questions](media/01-03-evaluation-generate.png)
 
-3. Under the **Choose a model deployment as judge** section, select the `Phi-4` model deployment and then select the **Create** button.
+3. Under the **Choose a model deployment as judge** section, select the `gpt-4o-mini` model deployment and then select the **Create** button.
     
     ![Azure AI Foundry Portal - Evaluate model - Create](media/01-03-evaluation-create.png)
 
