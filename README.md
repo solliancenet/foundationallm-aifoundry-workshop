@@ -19,22 +19,22 @@ This repository contains the materials for the **Build Practical AI Solutions wi
 4. **FoundationaLLM Overview** (presentation)
    - Agentic solution with FoundationaLLM
    - How we built FoundationaLLM on top of Azure AI Foundry
-5. **Lab 1: A practical use of the Azure AI Model Inference API** (lab and demo)
+5. **Lab 1: A practical use of the Azure AI Model Inference API** (lab)
 6. **Building Agents** (presentation)
    - Agent creation lifecycle
    - Azure AI Agent Service
    - Azure AI Foundry SDK for Agent Service
-7. **Lab 2: Building agents with AI Foundry and FoundationaLLM** (lab and demo)
+7. **Lab 2: Building agents with Azure AI Foundry** (lab)
 8. **Building Agents - continued** (presentation)
    - Motivations for RAG
    - RAG as a tool
    - Azure AI Search
    - RAG and fine tuning
-9.  **Demo: Knowledge Graphs - the future of RAG** (demo)
+9.  **Demo 1: Knowledge Graphs - the future of RAG** (demo)
 10. **Building Agents - continued** (presentation)
     - Code generation and execution as a tool
     - Analytics as a tool
-11. **Lab 3: Going beyond the basic tools** (lab and demo)
+11. **Demo 2: Going beyond the basic tools** (demo)
 12. **Building Agents - continued** (presentation)
     - Logic apps as a tool
     - Agents as a tool
@@ -54,12 +54,9 @@ This repository contains the materials for the **Build Practical AI Solutions wi
 
 ### Lab 1: A practical use of the Azure AI Model Inference API
 
-   - **Objective**: Understand the Azure AI Model Inference API in Azure AI Foundry and how to leverage it in a solution.
-   - **Duration**: 25 minutes for the lab and 5 minutes for the demo
-   - **Prerequisites**: Access to Azure AI Foundry and FoundationaLLM.
-
->[!NOTE]
-At the end of the lab, the trainer will provide a demo of how is FoundationaLLM using the relevant Azure AI Foundry capabilities behind the scenes. This will help you improve your understanding of the lab and how to leverage the Azure AI Foundry capabilities in a solution.
+- **Objective**: Understand the Azure AI Model Inference API in Azure AI Foundry and how to leverage it in a solution.
+- **Duration**: 30 minutes
+- **Prerequisites**: Access to Azure AI Foundry.
 
 ### Exercise 1: A tour of the Azure AI Foundry Portal
 
@@ -70,93 +67,94 @@ In this exercise, you will tour the Azure AI Foundry Portal. You will be using y
 
 1. Login to the [Azure AI Foundry Portal](https://ai.azure.com/) using your workshop account.
    
-2. Navigate to the `fllm-lab-user-NN` project that is displayed at the top of the scree.
+2. Navigate to the `project-labuser-NN` project that is displayed at the top of the screen.
 
     ![Azure AI Foundry Portal - Hub](media/01-01-foundry-portal-hub.png)
 
-3. Explore the various sections of the portal avilable within the project. Make sure to check **Mode catalog**, **AI Services**, **Agents**, **Templates**, **Tracing**, **Evaluation**, **Safety + security**, and **Models + endpoints**.
+3. Select the **Overview** section from the left navigation pane and explore the service endpoints listed under **Included capabilities**.
 
-    ![Azure AI Foundry Portal - Project](media/01-01-foundry-portal-project.png)
+    ![Azure AI Foundry Portal - Overview](media/01-01-foundry-portal-overview.png)
+
+4. Select the **Model catalog** section from the left navigation pane and explore the various models available within the project.
+
+    ![Azure AI Foundry Portal - Model catalog](media/01-01-foundry-portal-model-catalog.png)
+
+4. Select the **Playgrounds** section from the left navigation pane and explore the various playgrounds available within the project.
+
+    ![Azure AI Foundry Portal - Playgrounds](media/01-01-foundry-portal-playgrounds.png)
+
+5. Select the **AI Services** section from the left navigation pane. Select the **Manage AI Services** button from the top right corner of the screen. Note the AI Services instance named `ai-foundationallmaifoundry693278793889` that is connected to the project. Select its name to view the details of the connection.
+
+    ![Azure AI Foundry Portal - AI Services](media/01-01-foundry-portal-aiservices.png)
+
+6. Select the **Models + endpoints** section from the left navigation pane and explore the various models and endpoints available within the project.
+
+    ![Azure AI Foundry Portal - Models + endpoints](media/01-01-foundry-portal-models-endpoints.png)
+
+7. Spend a few more minutes exploring the rest of the sections in the left navigation pane.
+
 
 ### Exercise 2: Using the Azure AI Model Inference API
 
 In this exercise, you will deply a model and interact with it using the Azure AI Model Inference API. You will be using your workshop account to access the portal.
 
-1. Login to the [Azure AI Foundry Portal](https://ai.azure.com/) using your workshop account. Select the **Models + endpoints** section from the left navigation pane and then select the **Deploy base model** option from the **+ Deploy model** dropdown.
+1. Login to the [Azure AI Foundry Portal](https://ai.azure.com/) using your workshop account. 
+2. Select the **Models + endpoints** section from the left navigation pane and select the `Phi-4` model deployment. Explore the endpoint details and note how the URL `https://ai-foundationallmaifoundry693278793889.services.ai.azure.com/models/chat/completions?api-version=2024-05-01-preview` is agnostic to the model being used. This is because the Azure AI Model Inference API is designed to be a generic API that can be used with any model deployed in Azure AI Foundry.
+
+    ![Azure AI Foundry Portal - Deploy base model](media/01-02-foundry-portal-deployed-model-phi4.png)
+
+3. Explore the details on how to use the API with various programming languages. Note the code examples in various languages that demonstrate how to interact with the model using the Azure AI Model Inference API.
+
+4. Select the **Open in playground** option to open the model in the playground. This will allow you to interact with the model and see how it responds to different questions.
+
+5. We will now deploy a new model. Return to the **Models + endpoints** section and select the **Deploy base model** option from the **+ Deploy model** dropdown.
 
     ![Azure AI Foundry Portal - Deploy base model](media/01-02-foundry-portal-deploy-model.png)
 
-2. Enter the value `phi` in the search box, select the **Phi-4** model from the list of models, and select the **Confirm** button.
+6. Enter the value `phi` in the search box, select the **Phi-4** model from the list of models, and select the **Confirm** button.
 
     ![Azure AI Foundry Portal - Deploy base model - Phi-4](media/01-02-foundry-portal-deploy-model-phi4.png)
 
-3. Select the **Serverless API with Azure AI Content Safety** option and then select the **Deploy** button to deploy the model.
+7. Select the **Agree and Proceed** button to accept the terms and conditions.
 
-4. View the deployment status of the model in the **Models + endpoints** section. The deployment may take a few minutes to complete. Note the code examples in various languages that demonstrate how to interact with the model using the Azure AI Model Inference API.
+8.  Note the details of the deployment in the **Deploy model Phi-4** popup window. Select the **Connect and deploy** button to proceed with the deployment. After a short while, the deployment will fail with an error message stating that you do not have the required permissions to deploy the model. This is expected as the workshop account does not have the required permissions to deploy the model to the connected AI Services instance.
+
+    ![Azure AI Foundry Portal - Deploy model - Phi-4 - Error](media/01-02-foundry-portal-deploy-model-phi4-error.png)
+
+>[!NOTE]
+>In real world scenarios, you will need to separate permissions between different teams from your organization, or even between members of the same team. To provide a simple example of how this works, your lab user was not granted the required permissions to deploy models at the hub level (this is intentional). The user's permissions are limited to the project level. Next, we will deploy the model at the project level.
+
+9. By default, your project is configured to attempt to deploy models to the inference service of the AI Services instance that is connected to the project (the one that your user does not have permissions to deploy to). To change this, select the **Preview features** option from the top right corner of the screen and then make sure to turn off the **Deploy models to the Azure AI model inference service** option. This will allow you to deploy models to the project level.
+
+    ![Azure AI Foundry Portal - Preview features](media/01-02-foundry-portal-preview-features.png)
+
+10. Perform again the actions from steps 5 and 6. Note how the option has changed now. Select **Serverless API with Azure AI Content Safety** option to deploy the model. This option is available because the project is configured to deploy models to the project level.
+
+    ![Azure AI Foundry Portal - Deploy base model - Phi-4 serverless](media/01-02-foundry-portal-deploy-model-phi4-serverless.png)
+
+10. Select the **Deploy** button to deploy the model.
+
+11. View the deployment status of the model in the **Models + endpoints** section. The deployment may take a few minutes to complete. Note the code examples in various languages that demonstrate how to interact with the model using the Azure AI Model Inference API. Note the **API Routes** section and how this deployment option also provides an Azure AI model inference API endpoint (you should see a URL that is similar to `https://Phi-4-fcuqu.eastus2.models.ai.azure.com/chat/completions`).
 
     ![Azure AI Foundry Portal - Deployed base model - Phi-4](media/01-02-foundry-portal-deployed-model-phi4.png)
 
-### Exercise 3: A tour of the FoundationaLLM Management Portal and User Portal
-
-In this exercise, you will tour the FoundationaLLM Management Portal and User Portal. You will be using your workshop account to access the portals.
-
->[!NOTE]
->Your workshop account should be `fllm-labuser-NN@foundationallm.ai` (where `NN` is your lab number assigned at the beginning of the workshop).
-
-1. Login to the [FoundationaLLM Management Portal](https://camanagementuil43jljq2i5ox6.lemondesert-a0804c39.eastus2.azurecontainerapps.io/) using your workshop account.
-2. Navigate to the `All Agents` section and locate the `AIFoundry-NN` agent.
-
-    ![Management Portal - All Agents](media/01-03-management-portal-agents.png)
-
-3. Select the `Edit` action associated with the agent and observe the properties of the agent. Make sure you scroll all the way down to see all the properties.
-
-     ![Management Portal - Agent properties](media/01-03-management-portal-edit-agent.png)
-
-4. Navigate to the `Prompts` section and locate the prompts associated with the `AIFoundry-NN` agent.
-
-    ![Management Portal - Prompts](media/01-03-management-portal-prompts.png)
-
-5. Login to the [FoundationaLLM User Portal](https://cachatuil43jljq2i5ox6.lemondesert-a0804c39.eastus2.azurecontainerapps.io/) using your workshop account.
-6. In the top-right corner, select the `AIFoundry-NN` agent from the dropdown list. This will allow you to interact with the agent you will be working with during the workshop. Ask the agent `Who are you?` to confirm everything is working correctly. The agent should respond as follows:
-
-   ![User Portal - Agent selection and interaction](media/01-03-user-portal.png)
-
->[!NOTE]
->For the reminder of this workshop, the **FoundationaLLM Management Portal** will be referred to as **Management Portal** and the **FoundationaLLM User Portal** will be referred to as **User Portal**. Also, `NN` will identify the lab number assigned to you at the beginning of the workshop.
-
-### Exercise 4: Interact with a FoundationaLLM agent using the Inference API
-   
-1. Login to the [FoundationaLLM User Portal](https://cachatuil43jljq2i5ox6.lemondesert-a0804c39.eastus2.azurecontainerapps.io/) using your workshop account.
-
-2. Submit a question to the `AIFoundry-NN` and note the response.
-
-   TODO: Update screenshot.
-
-3. Login to the [FoundationaLLM Management Portal](https://camanagementuil43jljq2i5ox6.lemondesert-a0804c39.eastus2.azurecontainerapps.io/) using your workshop account. Select the `AIFoundry-NN` agent and edit its settings. Notice the workflow selection on the agent and the workflow model named `Phi3Model`.
-
-   TODO: Update screenshot.
-
-
-FoundationaLLM uses the Azure AI Model Inference API to interact with the model. The API is used to send requests to the model and receive responses. The API is designed to be easy to use and provides a simple interface for interacting with the model.
-
-Next, your instructor will provide a demo of how is this process working behind the scenes.
+You have now completed the lab. You have learned how to deploy a model in Azure AI Foundry and how to interact with it using the Azure AI Model Inference API. You have also explored how to use the Azure AI Model Inference API with different programming languages.
  
-## Lab 2: Building agents with AI Foundry and FoundationaLLM
+## Lab 2: Building agents with Azure AI Foundry
 
-   - **Objective**: Building agents atop Azure AI Foundry capabilities.
-   - **Duration**: 25 minutes for the lab and 5 minutes for the demo
-   - **Prerequisites**: Access to Azure AI Foundry and FoundationaLLM.
-
->[!NOTE]
-At the end of the lab, the trainer will provide a demo of how is FoundationaLLM using the relevant Azure AI Foundry capabilities behind the scenes. This will help you improve your understanding of the lab and how to leverage the Azure AI Foundry capabilities in a solution.
+- **Objective**: Building agents atop Azure AI Foundry capabilities.
+- **Duration**: 30 minutes
+- **Prerequisites**: Access to Azure AI Foundry.
 
 ### Exercise 1: Create a new agent in the Azure AI Foundry portal
 
-1. Login to the [Azure AI Foundry Portal](https://ai.azure.com/) using your workshop account. Select the **Agents** section from the left navigation pane and then select the **+ New agent** option.
+1. Login to the [Azure AI Foundry Portal](https://ai.azure.com/) using your workshop account. Select the **Agents** section from the left navigation pane. If this is the first time you are accessing the portal, you will need to select an Azure Open AI Service resource. From the dropdown list select the `aifoundationallmaifoundry693278793889_aoai` option and the select the **Let's go** button. If you are not prompted to select an Azure Open AI Service resource, skip this step and select the **+ New agent** button.
 
-    TODO: Update screenshot.
+    ![Azure AI Foundry Portal - Select Azure Open AI Service resource](media/02-01-agents-select-azure-openai-resource.png)
 
-2. Under the **Deployment** section, select the `gpt-4o-mini` model from the list of models. This is a smaller version of the `gpt-4o` model and is used for demonstration purposes.
+2. A new agent has been created for you. Note the properties of the agent. Note how the `gpt-4o-mini` model deployment has been automatically selected for the agent, as this is the only Azure OpenAI model deployment that is compatible with the agent.
+
+    ![Azure AI Foundry Portal - New agent](media/02-01-agents-properties.png)
 
 3. Under the **Instructions** section, enter the following instructions:
 
@@ -166,127 +164,80 @@ At the end of the lab, the trainer will provide a demo of how is FoundationaLLM 
 
 4. Select the **Try in playground** option to test the agent in the playground. This will allow you to interact with the agent and see how it responds to different questions.
 
-5. Return to the agent settings page and try using different instructions to see how the agent responds.
+    ![Azure AI Foundry Portal - Try in playground](media/02-01-agents-playground.png)
+
+5. Change the following agent settings to see how the agent responds after each change:
+   - Instructions
+   - Mode settings - Temperature
+   - Mode settings - Top P
 
 ### Exercise 2: Add a code interpreter action to the agent
 
-1. Under the **Actions** section, select the **+ Add** option and then select the **Code interpreter** action from the list of actions. Select **Save** to save the action.
+1. Under the **Actions** section, select the **+ Add** option. 
 
-2. Navigate to the playground and ask the agent the following question:
+    ![Azure AI Foundry Portal - Add code interpreter action](media/02-02-agents-add-action.png)
+
+2. Select the **Code interpreter** action from the list of actions.
+
+    ![Azure AI Foundry Portal - Code interpreter action](media/02-02-agents-add-code-interpreter.png)
+
+3. Select the **Save** button to add the action to the agent.
+
+    ![Azure AI Foundry Portal - Code interpreter action saved](media/02-02-agents-add-code-interpreter-save.png)
+
+4. Navigate to the playground and ask the agent the following question:
 
     ```txt
     Create Python code to calculate the first 10 Fibonacci numbers. Calculate the numbers and make the code available for download.
     ```
 
-3. Note how the agent responds with the code and the download link. Download the code file and open it to validate the code.
+5. Note how the agent responds with the code and the download link. Download the code file and open it to validate the code.
 
 ### Exercise 3: Add a knowledge action to the agent
 
-1. Under the **Knowledege** section, select the **+ Add** option and then select the **Files** action from the list of actions. Do not change the default options related to the vector store. Select the **Select local files** to upload files. Upload the [The Adventure of Whiskers](media/The_Adventure_of_Whiskers.pdf) file and select **Upload and save** to save the action.
+1. Under the **Knowledege** section, select the **+ Add** option. Select the **Files** options from the list of data sources.
+   
+    ![Azure AI Foundry Portal - Add knowledge action](media/02-03-agents-add-knowledge.png)
 
-2. Navigate to the playground and ask the agent the following question:
+2. Do not change the default options related to the vector store. Select the **Select local files** to upload files. 
+   
+    ![Azure AI Foundry Portal - Add knowledge action - Select local files](media/02-03-agents-add-knowledge-upload.png)
+
+3. Upload the [The Adventure of Whiskers](media/The_Adventure_of_Whiskers.pdf) file and select **Upload and save** to save the action.
+   
+    
+    ![Azure AI Foundry Portal - Add knowledge action - Upload](media/02-03-agents-add-knowledge-save.png)
+
+4. Navigate to the playground and ask the agent the following question:
 
     ```txt
     Tell me about the adventure of Whiskers.
     ```
 
-3. Note how the agent responds with the content.
+5. Note how the agent responds with the content.
 
-### Exercise 4: Interact with a FoundationaLLM agent that uses the `AzureAIAgentService` workflow.
+### Exercise 4: Use a combination of knwoledge and code interpreter actions
 
-1. Login to the [FoundationaLLM User Portal](https://cachatuil43jljq2i5ox6.lemondesert-a0804c39.eastus2.azurecontainerapps.io/) using your workshop account. Select the `AIFoundry-NN` agent from the dropdown list and ask the following question:
-
-    ```txt
-    Which are the planets of our solar system?
-    ```
-
-2. Now ask the following question:
+1. Ask the agent the following question:
 
     ```txt
-    Which are the planets of our solar system?
+    Create a PDF file that contains a summarized version of the adventure of Whiskers. Make the file available for download.
     ```
+You have now completed the lab. You have learned how to create an agent in Azure AI Foundry and how to add actions to the agent. You have also explored how to use the agent in the playground and how to interact with it using different actions.
 
-   Notice how the agent does not have knowledge about the previous question. This is because the agent is stateless and does not retain any information between interactions.
 
-3. Login to the [FoundationaLLM Management Portal](https://camanagementuil43jljq2i5ox6.lemondesert-a0804c39.eastus2.azurecontainerapps.io/) using your workshop account. Select the `AIFoundry-NN` agent and edit its settings. 
-4. Navigate to the **Should user prompts be rewritten?** and activate prompt rewriting. 
-5. Navigate to the **Should semantic cache be used?** and activate the semantic cache.
-6. Return to the **User Portal** and ask the questions again. Note how the agent now retains the information between interactions. Select the `Workflow` content artifact and observe the difference between the `user_prompt` and `user_prompt_rewrite` values.
+## Demo 1: Knowledge Graphs - the future of RAG
+    
+ - **Objective**: Understand the limitations of basic RAG, understand the potential of Knowledge Graphs and how can they be applied to improve RAG performance.
+ - **Duration**: 30 minutes
+ - **Prerequisites**: None
 
-7. Create a new conversation with the `AIFoundry-NN` agent and upload the [The Adventure of Whiskers](media/The_Adventure_of_Whiskers.pdf) file before asking the following question:
+In this interactive demo we will explore how to use knowledge graphs to enhance the performance of RAG (Retrieval-Augmented Generation) agents. We will demonstrate the FoundationaLLM implementation of knowledge graphs and how they can be used to improve the performance of RAG agents.
 
-    ```txt
-    Tell me about the adventure of Whiskers.
-    ```
+## Demo 2: Going beyond the basic tools
 
-   Note the response of the agent and the `Knowledge` content artifact.
+  - **Objective**: Understand which are the benefits and the challenges of implementing a practical, enterprise-grade AI solution on top of Azure AI Foundry.
+  - **Duration**: 30 minutes
+  - **Prerequisites**: None
 
-Next, your instructor will provide a demo of how is this process working behind the scenes.
-
-## Lab 3: Going beyond the basic tools
-
-   - **Objective**: Understand the possiblities on building on top of and expanding the capabilities of agents.
-   - **Duration**: 25 minutes for the lab and 5 minutes for the demo
-   - **Prerequisites**: Access to FoundationaLLM.
-
->[!NOTE]
-At the end of the lab, the trainer will provide a demo of how is FoundationaLLM using the relevant Azure AI Foundry capabilities behind the scenes. This will help you improve your understanding of the lab and how to leverage the Azure AI Foundry capabilities in a solution.
-
-### Exercise 1: Using a SQL tool that connects to a Microsoft Fabric Warehouse
-
-1. Login to the [FoundationaLLM User Portal](https://cachatuil43jljq2i5ox6.lemondesert-a0804c39.eastus2.azurecontainerapps.io/) using your workshop account. Select the `AIFoundry-NN` agent from the dropdown list and ask the following question:
-
-    ```txt
-    Which are the zip codes of Fairfield County, OH?
-    ```
-2. Select the `SQL` content artifact and observe the details of the invocation of the newly added SQL tool.
-
-    ![User Portal - SQL tool invocation](media/03-01-user-portal-agent-with-sql-tool-response.png)
-
-3.  Let's explore the capabilities of the `SQL` tool. Return to the **Management Portal**, edit the agent, navigate to the **Tools** section and then edit the `SQL` tool. 
-
-    ![Management Portal - Edit SQL tool](media/03-01-management-portal-edit-sql-tool.png)
-
-4. Notice the settings of the tool. The `SQL` tool is configured to connect to a Microsoft Fabric Warehouse. The connection is preconfigured for you.
-
-   ![Management Portal - SQL tool properties](media/03-01-management-portal-sql-tool-properties.png)
-
-5.  Note the prompts associated with the SQL tool. To view their definitions, from the left sidebar, select `Prompts` section (underneath the `Agents` header), locate the `AIFoundry-NN-Tool-SQL-Main` prompt and select the `Edit` action associated with it. Notice the prompt template and the prompt parameters. The prompt template is used to generate the SQL query that will be executed.
-
-6. In the **User Portal**, ask the following question: 
-   
-   ```txt
-   What is the history of Ohio?
-   ```
-
-   Select the `Knowledge` content artifact and observe the details of the invocation of the knowledge source tool.
-
-7. Ask the following question: 
-   
-   ```txt
-   How was Fairfield County, OH named and which are its zip codes?`
-   ```
-
-   Notice how both the `SQL` and `Knowledge` tools are invoked to answer the question.
-
-### Exercise 2: Using a KQL tool that connects to a Microsoft Fabric Evenhouse
-
-1. Login to the [FoundationaLLM User Portal](https://cachatuil43jljq2i5ox6.lemondesert-a0804c39.eastus2.azurecontainerapps.io/) using your workshop account. Select the `AIFoundry-NN` agent from the dropdown list and ask the following question:
-
-    ```txt
-    What is the latest OHLC value of MSFT?
-    ```
-
-2. Select the `KQL` content artifact and observe the details of the invocation of the KQL tool.
-
-### Exercise 3: Using a File Analysis tool that connects to a Parquet file in OneLake
-
-1. Login to the [FoundationaLLM User Portal](https://cachatuil43jljq2i5ox6.lemondesert-a0804c39.eastus2.azurecontainerapps.io/) using your workshop account. Select the `AIFoundry-NN` agent from the dropdown list and ask the following question:
-
-    ```txt
-    What is the average price of products of type Jackets?
-    ```
-
-2. Select the `FileAnalysis` content artifact and observe the details of the invocation of the File Analysis tool.
-
-Next, your instructor will provide a demo of how is this process working behind the scenes.
+In this interactive demo we will explore how to use the FoundationaLLM platform to build agents that go beyond the basic tools. We will demonstrate how to use the FoundationaLLM platform to build agents that can perform complex tasks and how to use the FoundationaLLM platform to enrich the performance of agents with capabilities such as prompt rewriting, semantic caching, analytics, and more.
