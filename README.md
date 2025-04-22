@@ -138,7 +138,34 @@ In this exercise, you will deply a model and interact with it using the Azure AI
 
     ![Azure AI Foundry Portal - Deployed base model - Phi-4](media/01-02-foundry-portal-deployed-model-phi4.png)
 
-You have now completed the lab. You have learned how to deploy a model in Azure AI Foundry and how to interact with it using the Azure AI Model Inference API. You have also explored how to use the Azure AI Model Inference API with different programming languages.
+
+### Exercise 3: Evaluate model performance
+
+In this exercise, you will evaluate the performance of the model using the builtin capabilities for Azure AI Foundry. You will be using your workshop account to access the portal.
+
+1. Select the **Evaluation** section from the left navigation pane and select the select the **+ New evaluation** button. Select the **Model and prompt** option.
+
+    ![Azure AI Foundry Portal - Evaluate model](media/01-03-evaluation-model.png)
+
+2. Note the model that is selected for evaluation (`gpt-4.1-mini`). Navigate to the **Configure test data** section and enter the following text in the **Topic to generate questions about** field:
+
+    ```txt
+    The planets of our solar system.
+    ```
+    Select the **Generate** buton and note how the system generates a set of questions based on the topic.
+
+    ![Azure AI Foundry Portal - Evaluate model - Generate questions](media/01-03-evaluation-generate.png)
+
+3. Under the **Choose a model deployment as judge** section, select the `Phi-4` model deployment and then select the **Create** button.
+    
+    ![Azure AI Foundry Portal - Evaluate model - Create](media/01-03-evaluation-create.png)
+
+4. Wait until the evaluation is completed. This may take a few minutes. Once the evaluation is completed, review the report.
+   
+   >[!NOTE]
+   >The evaluation might take several minutes to complete. If the evaluation is still running after a few minutes, you can skip this step and come back to it later (e.g. at the beginning of the next lab).
+
+You have now completed the lab. You have learned how to use the Azure AI Model Inference API to deploy and interact with models in Azure AI Foundry. You have also learned how to evaluate the performance of models using the builtin capabilities for Azure AI Foundry.
  
 ## Lab 2: Building agents with Azure AI Foundry
 
@@ -147,6 +174,8 @@ You have now completed the lab. You have learned how to deploy a model in Azure 
 - **Prerequisites**: Access to Azure AI Foundry.
 
 ### Exercise 1: Create a new agent in the Azure AI Foundry portal
+
+In this exercise, you will create a new agent in the Azure AI Foundry portal. You will be using your workshop account to access the portal.
 
 1. Login to the [Azure AI Foundry Portal](https://ai.azure.com/) using your workshop account. Select the **Agents** section from the left navigation pane. If this is the first time you are accessing the portal, you will need to select an Azure Open AI Service resource. From the dropdown list select the `aifoundationallmaifoundry693278793889_aoai` option and the select the **Let's go** button. If you are not prompted to select an Azure Open AI Service resource, skip this step and select the **+ New agent** button.
 
@@ -173,6 +202,8 @@ You have now completed the lab. You have learned how to deploy a model in Azure 
 
 ### Exercise 2: Add a code interpreter action to the agent
 
+In this exercise, you will add a code interpreter action to the agent. The code interpreter action allows the agent to execute code and return the results.
+
 1. Under the **Actions** section, select the **+ Add** option. 
 
     ![Azure AI Foundry Portal - Add code interpreter action](media/02-02-agents-add-action.png)
@@ -194,6 +225,8 @@ You have now completed the lab. You have learned how to deploy a model in Azure 
 5. Note how the agent responds with the code and the download link. Download the code file and open it to validate the code.
 
 ### Exercise 3: Add a knowledge action to the agent
+
+In this exercise, you will add a knowledge action to the agent. The knowledge action allows the agent to access external knowledge sources and use them to answer questions.
 
 1. Under the **Knowledege** section, select the **+ Add** option. Select the **Files** options from the list of data sources.
    
@@ -217,6 +250,8 @@ You have now completed the lab. You have learned how to deploy a model in Azure 
 5. Note how the agent responds with the content.
 
 ### Exercise 4: Use a combination of knwoledge and code interpreter actions
+
+In this exercise, you will use a combination of knowledge and code interpreter actions to create a PDF file that contains a summarized version of the adventure of Whiskers.
 
 1. Ask the agent the following question:
 
