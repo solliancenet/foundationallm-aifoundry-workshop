@@ -19,7 +19,7 @@ This repository contains the materials for the **Build Practical AI Solutions wi
 4. **FoundationaLLM Overview** (presentation)
    - Agentic solution with FoundationaLLM
    - How we built FoundationaLLM on top of Azure AI Foundry
-5. **Lab 1: A practical use of the Azure AI Model Inference API** (lab)
+5. **Lab 1: Models in Azure AI Foundry** (lab)
 6. **Building Agents** (presentation)
    - Agent creation lifecycle
    - Azure AI Agent Service
@@ -52,9 +52,9 @@ This repository contains the materials for the **Build Practical AI Solutions wi
 
 ## Labs and Demos
 
-### Lab 1: A practical use of the Azure AI Model Inference API
+### Lab 1: Models in Azure AI Foundry
 
-- **Objective**: Understand the Azure AI Model Inference API in Azure AI Foundry and how to leverage it in a solution.
+- **Objective**: Understand the management of models in Azure AI Foundry, including Azure AI Model Inference API and evaluation.
 - **Duration**: 30 minutes
 - **Prerequisites**: Access to Azure AI Foundry.
 
