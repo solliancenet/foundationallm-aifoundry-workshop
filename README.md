@@ -165,6 +165,8 @@ In this exercise, you will evaluate the performance of the model using the built
    >[!NOTE]
    >The evaluation might take several minutes to complete. If the evaluation is still running after a few minutes, you can skip this step and come back to it later (e.g. at the beginning of the next lab).
 
+   ![Azure AI Foundry Portal - Evaluate model - Report](media/01-03-evaluation-results.png)
+
 You have now completed the lab. You have learned how to use the Azure AI Model Inference API to deploy and interact with models in Azure AI Foundry. You have also learned how to evaluate the performance of models using the builtin capabilities for Azure AI Foundry.
  
 ## Lab 2: Building agents with Azure AI Foundry
