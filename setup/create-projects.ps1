@@ -1,4 +1,4 @@
-for ($i = 2; $i -le 50; $i++) {
+for ($i = 1; $i -le 30; $i++) {
     $projectName = "project-labuser-{0:D2}" -f $i
     $userName = "fllm-labuser-{0:D2}@foundationallm.ai" -f $i
     Write-Host "Creating project $projectName for user $userName"
