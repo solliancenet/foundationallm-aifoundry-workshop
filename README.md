@@ -238,18 +238,21 @@ In this exercise, you will add a knowledge action to the agent. The knowledge ac
    
     ![Azure AI Foundry Portal - Add knowledge action - Select local files](media/02-03-agents-add-knowledge-upload.png)
 
-3. Upload the [The Adventure of Whiskers](media/The_Adventure_of_Whiskers.pdf) file and select **Upload and save** to save the action.
-   
+3. Download the [The Adventure of Whiskers](media/The_Adventure_of_Whiskers.pdf) file. In GitHub select the **Download raw file** option to download the file.
+
+    ![GitHub - Download raw file.](media/download-file-from-github.png)
+
+4. Upload the [The Adventure of Whiskers](media/The_Adventure_of_Whiskers.pdf) file and select **Upload and save** to save the action.
     
     ![Azure AI Foundry Portal - Add knowledge action - Upload](media/02-03-agents-add-knowledge-save.png)
 
-4. Navigate to the playground and ask the agent the following question:
+5. Navigate to the playground and ask the agent the following question:
 
     ```txt
     Tell me about the adventure of Whiskers.
     ```
 
-5. Note how the agent responds with the content.
+6. Note how the agent responds with the content.
 
 ### Exercise 4: Use a combination of knwoledge and code interpreter actions
 
